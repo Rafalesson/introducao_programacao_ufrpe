@@ -5,11 +5,11 @@ mes_nasc = 5
 ano_nasc = 1998
 
 # Data atual
-dia_atual = 14
+dia_atual = 18
 mes_atual = 5
 ano_atual = 2025
 
-# Calcula dias totais (cada ano = 365 dias, cada mês = 30 dias)
+#Calcula dias totais (cada ano = 365 dias, cada mês = 30 dias)
 data_atual_em_dias = ano_atual * 365 + mes_atual * 30 + dia_atual
 data_nasc_em_dias = ano_nasc * 365 + mes_nasc * 30 + dia_nasc
 diasDeVida = data_atual_em_dias - data_nasc_em_dias
