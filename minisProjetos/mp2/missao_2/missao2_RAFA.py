@@ -1,12 +1,12 @@
 import sys
 import json
 from pathlib import Path
-from classes import Data, Gastos, Financas, Pessoa
 
 # Adiciona a pasta raiz ao sys.path
 sys.path.append(str(Path(__file__).parent.parent))
 
-from base import colorir, azul, verde, ciano, vermelho, amarelo
+from classes import Data, Gastos, Financas, Pessoa
+from base import colorir, verde, ciano, vermelho, amarelo
 
 # Carrega os dados do arquivo JSON
 try:
@@ -43,10 +43,10 @@ try:
 
     print(f"\nAgora organizei todos os seus dados de forma concentrada aqui no meu sistema. \nVou te mostrar como ficou:")
     print(f"\n{colorir(antonieta.nome, ciano)}, nascido(a) em {colorir(f"{antonieta.nasc.dia}/{antonieta.nasc.mes}/{antonieta.nasc.ano}", verde)}.")
-    print(f"{colorir(antonieta.nome, ciano)} tem {colorir(f"R$ {antonieta.financas.patrimonio:.2f}", verde)} de {colorir("patrimônio", amarelo)}.")
-    print(f"{colorir(antonieta.nome, ciano)} tem {colorir(f"R$ {antonieta.financas.salario:.2f}", verde)} de {colorir("salário", amarelo)}.")
-    print(f"{colorir(antonieta.nome, ciano)} tem {colorir(f"R$ {gastos_totais:.2f}", verde)} de {colorir("gastos", amarelo)}.")
-    print(f"{colorir(antonieta.nome, ciano)} tem {colorir(f"R$ {antonieta.financas.investimento:.2f}", verde)} de {colorir("investimento", amarelo)}.")
+    print(f"{colorir(antonieta.nome, ciano)} tem R$ {colorir(f"{antonieta.financas.patrimonio:.2f}", verde)} de {colorir("patrimônio", amarelo)}.")
+    print(f"{colorir(antonieta.nome, ciano)} tem R$ {colorir(f"{antonieta.financas.salario:.2f}", verde)} de {colorir("salário", amarelo)}.")
+    print(f"{colorir(antonieta.nome, ciano)} tem R$ {colorir(f"{gastos_totais:.2f}", vermelho)} de {colorir("gastos", amarelo)}.")
+    print(f"{colorir(antonieta.nome, ciano)} tem R$ {colorir(f"{antonieta.financas.investimento:.2f}", verde)} de {colorir("investimento", amarelo)}.")
 
 except FileNotFoundError:
     print(f"\n⚠️\tArquivo de dados não encontrado. Execute primeiro o {colorir('missao1.py', vermelho)} para gerar o arquivo.")

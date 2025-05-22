@@ -1,10 +1,14 @@
 import sys
+import os
 import time
 import json
 from pathlib import Path
 
 # Adiciona a pasta raiz ao sys.path
 sys.path.append(str(Path(__file__).parent.parent))
+
+# Define o diretório raiz do projeto
+projeto_raiz = Path(__file__).parent.parent
 
 from base import colorir, azul, verde, ciano, vermelho, amarelo
 
@@ -33,13 +37,13 @@ if __name__ == "__main__":
     print("\nPrimeiro, preciso de algumas informações: ")
 
     nome = input(f"Me diz teu {colorir("nome", amarelo)}: ")
-    dia = float(input(f"O {colorir("dia", amarelo)} que nasceu: "))
-    mes = float(input(f"Agora o {colorir("mês", amarelo)}: "))
-    ano = float(input(f"E o {colorir("ano", amarelo)}: "))
+    dia = int(input(f"O {colorir("dia", amarelo)} que nasceu: "))
+    mes = int(input(f"Agora o {colorir("mês", amarelo)}: "))
+    ano = int(input(f"E o {colorir("ano", amarelo)}: "))
 
     # Confirmação de dados
     print("\nMuito bem! Confirmando seus dados, estou registrando aqui:" )
-    print(f"{colorir(f"{nome}", verde)}, nascimento em {colorir(f"{dia}/{mes}/{ano}", verde)}")  
+    print(f"{colorir(f"{nome}", verde)}, nascimento em {colorir(f"{dia}/{mes}/{ano}", verde)}.")  
 
     print("\n--------------------\n")
     time.sleep(1)
@@ -76,7 +80,7 @@ if __name__ == "__main__":
     print("\n--------------------\n")
     time.sleep(1)
 
-    if saldo_mensal >= 0:
+    if saldo_mensal > 0:
         print(f"Para terminar, calculando o seu saldo mensal, com base em todos os gastos e no teu salário, o valor resultante é de {colorir(f"R$ {saldo_mensal:.2f}", verde)}")
     else:
         print(f"Para terminar, calculando o seu saldo mensal, com base em todos os gastos e no teu salário, o valor resultante é de {colorir(f"R$ {saldo_mensal:.2f}", vermelho)}")
@@ -105,4 +109,4 @@ if __name__ == "__main__":
     with open(os.path.join(projeto_raiz, "dados_usuario.json"), "w") as f:
         json.dump(dados_usuario, f, indent=4)
 
-    print("\nDados salvos em 'dados_usuario.json'.")
+    print("\nDados salvos.")
