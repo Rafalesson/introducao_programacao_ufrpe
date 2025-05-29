@@ -58,7 +58,7 @@ try:
             print(f"Com base na sua capacidade de investimento mensal de {colorir(f'R$ {investimento:.2f}', verde)}")
             print(f"E o seu patrimônio atual de {colorir(f'R$ {patrimonio:.2f}', verde)}")
             print(f"Você conseguiria atingir o valor de {colorir(f'R$ {valor_objetivo:.2f}', verde)} em:")
-            print(f"{colorir(f'{meses_necessarios} meses', amarelo)} ou {colorir(f'{anos_necessarios:.1f} anos', amarelo)}.")
+            print(f"{colorir(f'{meses_necessarios} meses', amarelo)} ou {colorir(f'{anos_necessarios:.2f} anos', amarelo)}.")
             print(f"\nPor hora, é isso que tenho para te ajudar.\nEspero que tenha sido útil!")
 
 except FileNotFoundError:
