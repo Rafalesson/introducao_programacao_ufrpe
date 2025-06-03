@@ -77,9 +77,9 @@ def main():
                 print()
                 print(f"{R}{I}Erro: Percentual e aporte devem ser números. Tente novamente.{FX}")
                 print()
-            except Exception as e:
+            except Exception as problema:
                 print()
-                print(f"{R}{I}Ocorreu um erro inesperado: {e}{FX}")
+                print(f"{R}{I}Ocorreu um erro inesperado: {problema}{FX}")
                 print()
 
         elif comando == "sair":
