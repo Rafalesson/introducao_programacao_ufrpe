@@ -98,7 +98,7 @@ def main():
                     investimento.simular_mes()
                     tipo_investimento = "R" if investimento.recorrente else "U"
                     barras = "$" * int(investimento.saldo // 1000)  # Uma barra por R$ 1.000
-                    print(f"[{tipo_investimento}] LCI de {investimento.percentual:.2f}% do CDI | Total aportado: R${investimento.total_aportado:.2f} | Resgate: {G}R${investimento.saldo:.2f}{FX} {Y}{barras}{FX}")
+                    print(f"[{tipo_investimento}] LCI de {investimento.percentual:.2f}% do CDI | Total aportado: R${investimento.total_aportado:.2f} | Resgate: {G}R${investimento.saldo:.2f}{FX} \t{Y}{barras}{FX}")
 
                 mes_simulado = (mes_atual + meses_simulados - 1) % 12
                 ano_simulado = ano_atual + (mes_atual + meses_simulados - 1) // 12
