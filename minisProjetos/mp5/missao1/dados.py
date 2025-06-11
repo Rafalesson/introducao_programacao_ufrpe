@@ -1,5 +1,5 @@
-# Constante com os dados estáticos das empresas.
-# O "_" no início indica que é para uso interno deste módulo.
+from missao2.classes import Pessoa, Empresa
+
 _DADOS_EMPRESAS = [
     ("Moradia", "República A", "Aluguel, Várzea", 300.0, 3), ("Moradia", "República B", "Aluguel, Várzea", 300.0, 3),
     ("Moradia", "CTI Imobiliária", "Aluguel, Centro", 1500.0, 7), ("Moradia", "Orla Smart Live", "Aluguel, Boa V.", 3000.0, 9),
@@ -15,43 +15,26 @@ _DADOS_EMPRESAS = [
 
 GRUPOS_SOCIAIS = ["Herdeiros", "Supersalários", "Faixa Média-Alta", "Faixa Baixa", "Salário Mínimo"]
 
-class Pessoa:
-    def __init__(self, patrimonio: float, salario: float, grupo: str):
-        self.patrimonio = patrimonio
-        self.salario = salario
-        self.grupo = grupo
-        self.conforto = 0.0
-        self.compras_mes = {}
-
-class Empresa:
-    def __init__(self, categoria: str, nome: str, produto: str, custo: float, qualidade: int):
-        self.nome = nome
-        self.categoria = categoria
-        self.produto = produto
-        self.custo = custo
-        self.qualidade = qualidade
-        self.margem = 0.05
-        self.oferta = 0
-        self.reposicao = 10
-        self.vendas = 0
-        self.lucro_total = 0.0
+_GRUPOS_A_CRIAR = [
+    {"nome": GRUPOS_SOCIAIS[0], "n": 5, "pat": 20000000, "sal": 0, "var": 0},
+    {"nome": GRUPOS_SOCIAIS[1], "n": 10, "pat": 200000, "sal": 100000, "var": -5000},
+    {"nome": GRUPOS_SOCIAIS[2], "n": 25, "pat": 100000, "sal": 30000, "var": -1000},
+    {"nome": GRUPOS_SOCIAIS[3], "n": 50, "pat": 10000, "sal": 5000, "var": -50},
+    {"nome": GRUPOS_SOCIAIS[4], "n": 70, "pat": 10000, "sal": 1518, "var": 0},
+]
 
 def inicializar_dados():
     """Prepara e retorna todas as listas de entidades e configurações para a simulação."""
-    pessoas = []
-    categorias = ["Moradia", "Alimentação", "Transporte", "Saúde", "Educação"]
-    percentuais = [0.35, 0.25, 0.10, 0.10, 0.10]
+    def add_pessoas(grupo, num, patrimonio, salario, variacao=0.0):
+        for i in range(num):
+            pessoas.append(Pessoa(patrimonio + i * variacao, salario + i * variacao, grupo))
 
-    def add_pessoas(nome_grupo, num_pessoas, patrimonio, salario, variacao=0.0):
-        for i in range(num_pessoas):
-            pessoas.append(Pessoa(patrimonio + i * variacao, salario + i * variacao, nome_grupo))
-    
-    add_pessoas(GRUPOS_SOCIAIS[0], 5, patrimonio=20000000, salario=0)
-    add_pessoas(GRUPOS_SOCIAIS[1], 10, patrimonio=200000, salario=100000, variacao=-5000)
-    add_pessoas(GRUPOS_SOCIAIS[2], 25, patrimonio=100000, salario=30000, variacao=-1000)
-    add_pessoas(GRUPOS_SOCIAIS[3], 50, patrimonio=10000, salario=5000, variacao=-50)
-    add_pessoas(GRUPOS_SOCIAIS[4], 70, patrimonio=1000, salario=1518)
+    pessoas = []
+    for grupo_info in _GRUPOS_A_CRIAR:
+        add_pessoas(grupo_info["nome"], grupo_info["n"], grupo_info["pat"], grupo_info["sal"], variacao=grupo_info["var"])
 
     empresas = [Empresa(*dados) for dados in _DADOS_EMPRESAS]
-
+    categorias = ["Moradia", "Alimentação", "Transporte", "Saúde", "Educação"]
+    percentuais = [0.35, 0.25, 0.10, 0.10, 0.10]
+    
     return pessoas, empresas, categorias, percentuais
