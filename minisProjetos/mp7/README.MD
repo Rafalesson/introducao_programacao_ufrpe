@@ -2,8 +2,6 @@
 
 ![Status](https://img.shields.io/badge/status-concluído-green)
 
-Um simulador de mercado baseado em agentes (Agent-Based Model) escrito em Python. O projeto modela as interações entre consumidores (agentes `Pessoa`) e produtores (agentes `Empresa`) em uma microeconomia, observando o desenvolvimento de cenários socioeconômicos ao longo do tempo.
-
 ## 🚀 Sobre o Projeto
 
 O objetivo deste simulador é criar um ambiente virtual para estudar como variáveis macroeconômicas, como inflação e salário mínimo, e decisões individuais de consumo e precificação afetam a distribuição de riqueza, o padrão de vida (conforto) e a saúde do mercado (falências de empresas).

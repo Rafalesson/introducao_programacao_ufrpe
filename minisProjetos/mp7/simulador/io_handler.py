@@ -1,8 +1,7 @@
-# simulador/io_handler.py
-
 import csv
 import json
-from simulador.agents import Pessoa, Empresa
+# REMOVIDO: A importação de 'agents' foi removida do topo do arquivo.
+# from simulador.agents import Pessoa, Empresa
 
 def ler_categorias(caminho='data/categorias.json'):
     """Lê o arquivo JSON de categorias e retorna um dicionário."""
@@ -11,6 +10,9 @@ def ler_categorias(caminho='data/categorias.json'):
 
 def ler_pessoas(caminho='data/pessoas.txt'):
     """Lê o arquivo CSV de pessoas e retorna uma lista de objetos Pessoa."""
+    # ADICIONADO: A importação agora é local, dentro da função.
+    from simulador.agents import Pessoa
+    
     pessoas = []
     with open(caminho, 'r', encoding='utf-8') as f:
         leitor_csv = csv.reader(f)
@@ -22,6 +24,9 @@ def ler_pessoas(caminho='data/pessoas.txt'):
 
 def ler_empresas(caminho='data/empresas.csv'):
     """Lê o arquivo CSV de empresas e retorna uma lista de objetos Empresa."""
+    # ADICIONADO: A importação agora é local, dentro da função.
+    from simulador.agents import Empresa
+
     empresas = []
     with open(caminho, 'r', encoding='utf-8') as f:
         leitor_csv = csv.reader(f)

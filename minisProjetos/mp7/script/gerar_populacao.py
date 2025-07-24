@@ -13,11 +13,11 @@ from simulador import config
 GRUPOS_SOCIAIS = [
     {"nome": "Classe A", "quantidade": 30, "salario": (35000, 15000), "patrimonio": (2500000, 800000)},
     {"nome": "Classe B1", "quantidade": 70, "salario": (15000, 5000), "patrimonio": (500000, 150000)},
-    {"nome": "Classe B2", "quantidade": 130, "salario": (7500, 2000), "patrimonio": (150000, 50000)},
-    {"nome": "Classe C1", "quantidade": 250, "salario": (4000, 1000), "patrimonio": (40000, 12000)},
-    {"nome": "Classe C2", "quantidade": 250, "salario": (2500, 500), "patrimonio": (10000, 3000)},
-    {"nome": "Classe D", "quantidade": 170, "salario": (1800, 400), "patrimonio": (5000, 1500)},
-    {"nome": "Classe E", "quantidade": 100, "salario": (1500, 250), "patrimonio": (1500, 500)},
+    {"nome": "Classe B2", "quantidade": 100, "salario": (7500, 2000), "patrimonio": (150000, 50000)},
+    {"nome": "Classe C1", "quantidade": 150, "salario": (4000, 1000), "patrimonio": (40000, 12000)},
+    {"nome": "Classe C2", "quantidade": 150, "salario": (2500, 500), "patrimonio": (10000, 3000)},
+    {"nome": "Classe D", "quantidade": 200, "salario": (1800, 400), "patrimonio": (5000, 1500)},
+    {"nome": "Classe E", "quantidade": 300, "salario": (1500, 250), "patrimonio": (1500, 500)},
 ]
 
 def gerar_populacao():
